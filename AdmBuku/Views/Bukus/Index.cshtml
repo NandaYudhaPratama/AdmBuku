@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AdmBuku.Models.Buku>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a class="btn btn btn-primary" type="button" asp-action="Create">Tambah Buku</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Isbn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JudulBuku)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pengarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penerbit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TahunTerbit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isbn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JudulBuku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pengarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penerbit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TahunTerbit)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Isbn">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Isbn">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Isbn">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

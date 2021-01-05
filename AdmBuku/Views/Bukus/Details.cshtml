@@ -1,0 +1,43 @@
+﻿@model AdmBuku.Models.Buku
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Html.DisplayFor(modelItem => Model.JudulBuku)</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Isbn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Isbn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pengarang)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pengarang)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Penerbit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Penerbit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TahunTerbit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TahunTerbit)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Isbn">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
